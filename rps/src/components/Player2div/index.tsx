@@ -14,7 +14,6 @@ export const Player2div = () => {
           onChange={(e) => setPlayer2(e.target.value)}
           placeholder="Jogador 2"
         />
-        <C.Button2>enviar</C.Button2>
       </C.InsertData>
       <C.Typography>Qual será sua jogada {player2}?</C.Typography>
       <C.Button>

@@ -5,6 +5,10 @@ import Paper from "../../assets/images/paper.png";
 import Scissor from "../../assets/images/scissor.png";
 
 export const Player1div = () => {
+  const img1 = Rock;
+  const img2 = Paper;
+  const img3 = Scissor;
+
   const [player1, setPlayer1] = useState("");
 
   return (
@@ -14,18 +18,17 @@ export const Player1div = () => {
           onChange={(e) => setPlayer1(e.target.value)}
           placeholder="Jogador 1"
         />
-        <C.Button2>enviar</C.Button2>
         <C.Typography>Qual será sua jogada {player1}?</C.Typography>
       </C.InsertData>
       {/* <C.Typography>Qual será sua jogada {player1}?</C.Typography> */}
       <C.Button>
-        <img src={Rock} width="100%" />
+        <img src={img1} width="100%" />
       </C.Button>
       <C.Button>
-        <img width="100%" src={Paper} />
+        <img width="100%" src={img2} />
       </C.Button>
       <C.Button>
-        <img src={Scissor} width="100%" />
+        <img src={img3} width="100%" />
       </C.Button>
     </C.Container>
   );
