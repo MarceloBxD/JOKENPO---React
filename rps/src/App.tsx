@@ -1,18 +1,24 @@
 import { GlobalStyles } from "./styles";
 import * as C from "./styles";
-import { Input } from './components/input'
-import { Button } from './components/button'
+import { ContainerPlayers } from "./components/ContainerPlayers";
+import { Result } from "./components/Result";
+import { Header } from "./sections/Header";
 
 function App() {
   return (
-    <C.Container>
-      <C.Flex flexDir='column'>
-        <C.Typography letterSpacing='8px' fontSize='22px'>Jo Ken Po</C.Typography>
-        <Input/>
-        <Button/>
-      </C.Flex>
-      <GlobalStyles />
-    </C.Container>
+      <C.Container>
+        <Header/>
+        <C.Flex align="center" justify="center" flexDir="column">
+          <C.Typography fontSize="25px">
+            Jo Ken Po
+          </C.Typography>
+        </C.Flex>
+        <ContainerPlayers />
+        <C.Flex align="center" flexDir="column" justify="center">
+          <Result />
+        </C.Flex>
+        <GlobalStyles />
+      </C.Container>
   );
 }
 
