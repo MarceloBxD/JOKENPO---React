@@ -9,6 +9,7 @@ export const Button = styled.button`
 
     :hover{
         cursor: pointer;
+        opacity: 0.9;
     }
 
 `
