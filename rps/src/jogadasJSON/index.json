@@ -1,0 +1,8 @@
+{
+    "DataJogada":
+    [
+        {"id": 0, "nome": "Rock", "img": "https://png.pngtree.com/png-clipart/20220113/ourmid/pngtree-cartoon-hand-painted-stone-illustration-png-image_4159978.png"},
+        {"id": 1, "nome": "Paper", "img": "https://st4.depositphotos.com/1742172/24834/v/1600/depositphotos_248340298-stock-illustration-sticker-cute-cartoon-sheet-paper.jpg"},
+        {"id": 2, "nome": "Scissors", "img": "https://w7.pngwing.com/pngs/892/208/png-transparent-cartoon-scissors-cartoon-scissors-cartoon-scissors-animation.png"}
+    ]
+}

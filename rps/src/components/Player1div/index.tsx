@@ -1,15 +1,13 @@
 import * as C from "./styles";
-import React, { useState } from "react";
-import Rock from "../../assets/images/rock.png";
-import Paper from "../../assets/images/paper.png";
-import Scissor from "../../assets/images/scissor.png";
+import { DataChoose } from "../../jogadasJSON";
+import { useApp } from "../../contexts/context";
+import { Flex, Image } from "@chakra-ui/react";
 
 export const Player1div = () => {
-  const img1 = Rock;
-  const img2 = Paper;
-  const img3 = Scissor;
+  const DataJogada = DataChoose.DataJogada;
 
-  const [player1, setPlayer1] = useState("");
+  const { player1, setPlayer1, points, setPoints, choose, setChoose }: any =
+    useApp();
 
   return (
     <C.Container>
@@ -18,18 +16,23 @@ export const Player1div = () => {
           onChange={(e) => setPlayer1(e.target.value)}
           placeholder="Jogador 1"
         />
+        <C.TablePoints>
+          <C.Typography>Pontos: {points}</C.Typography>
+        </C.TablePoints>
         <C.Typography>Qual será sua jogada {player1}?</C.Typography>
+        {DataJogada.map((item, index) => (
+          <Flex
+            w="70px"
+            h="70px"
+            justify="center"
+            align="center"
+            mt="10px"
+            key={index}
+          >
+            <Image cursor='pointer' objectFit="cover" w="70px" h="70px" src={item.img} />
+          </Flex>
+        ))}
       </C.InsertData>
-      {/* <C.Typography>Qual será sua jogada {player1}?</C.Typography> */}
-      <C.Button>
-        <img src={img1} width="100%" />
-      </C.Button>
-      <C.Button>
-        <img width="100%" src={img2} />
-      </C.Button>
-      <C.Button>
-        <img src={img3} width="100%" />
-      </C.Button>
     </C.Container>
   );
 };

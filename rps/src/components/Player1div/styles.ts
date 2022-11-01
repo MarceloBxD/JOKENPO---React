@@ -50,3 +50,9 @@ export const Div = styled.div`
     width: 50px;
     background-color: red;
 `
+
+export const TablePoints = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100px;
+`;
