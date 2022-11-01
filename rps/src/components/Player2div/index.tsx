@@ -7,9 +7,13 @@ import { DataChoose } from "../../jogadasJSON";
 import { Image, Flex } from '@chakra-ui/react'
 
 export const Player2div = () => {
-  const { player2, setPlayer2, points, setPoints, choose, setChoose }: any =
+  const { player2, setPlayer2, points, setPoints, setChoosePlayer2 }: any =
     useApp();
+
   const DataJogada = DataChoose.DataJogada;
+  const handleChoose = (e: MouseEvent) => {
+    setChoosePlayer2(e.target.id)
+  }
  
 
   return (
@@ -32,7 +36,7 @@ export const Player2div = () => {
             mt="10px"
             key={index}
           >
-            <Image cursor='pointer' objectFit="cover" w="70px" h="70px" src={item.img} />
+            <Image onClick={handleChoose} id={item.id} cursor='pointer' objectFit="cover" w="70px" h="70px" src={item.img} />
           </Flex>
         ))}
       </C.InsertData>

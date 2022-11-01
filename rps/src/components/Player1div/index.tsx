@@ -5,15 +5,19 @@ import { Flex, Image } from "@chakra-ui/react";
 
 export const Player1div = () => {
   const DataJogada = DataChoose.DataJogada;
+  
+  const handleChoose = (event:MouseEvent) => {
+    setChoosePlayer1(event.target.id)
+  }
 
-  const { player1, setPlayer1, points, setPoints, choose, setChoose }: any =
+  const { player1, setPlayer1, points, setPoints, setChoosePlayer1 }: any =
     useApp();
 
   return (
     <C.Container>
       <C.InsertData>
         <C.Input
-          onChange={(e) => setPlayer1(e.target.value)}
+          onChange={e => setPlayer1(e.target.value)}
           placeholder="Jogador 1"
         />
         <C.TablePoints>
@@ -29,7 +33,7 @@ export const Player1div = () => {
             mt="10px"
             key={index}
           >
-            <Image cursor='pointer' objectFit="cover" w="70px" h="70px" src={item.img} />
+            <Image id={item.id} onClick={handleChoose} cursor='pointer' objectFit="cover" w="100%" h="100%" src={item.img} />
           </Flex>
         ))}
       </C.InsertData>

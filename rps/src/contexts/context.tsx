@@ -11,7 +11,8 @@ const AppContext = createContext({});
 export function AppProvider({ children }: any) {
   const [player1, setPlayer1] = useState<string>("");
   const [player2, setPlayer2] = useState<string>("");
-  const [choose, setChoose] = useState<number>();
+  const [choosePlayer1, setChoosePlayer1] = useState<number>(-1);
+  const [choosePlayer2, setChoosePlayer2] = useState<number>(-1);
   const [points, setPoints] = useState<number>(0);
 
   const value = {
@@ -19,8 +20,10 @@ export function AppProvider({ children }: any) {
     setPlayer1,
     player2,
     setPlayer2,
-    choose,
-    setChoose,
+    choosePlayer1,
+    setChoosePlayer1,
+    choosePlayer2,
+    setChoosePlayer2,
     points,
     setPoints
   };
